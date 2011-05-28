@@ -5,6 +5,8 @@
 
 class QDialogButtonBox;
 class QFormLayout;
+class QLabel;
+class QLineEdit;
 
 class InstallDialog : public QDialog
 {
@@ -19,7 +21,8 @@ public slots:
 private:
     QDialogButtonBox *buttons;
     QFormLayout *mLayout;
-
+    QLabel *instructions;
+    QLineEdit *mapUrl;
 };
 
 #endif // INSTALLDIALOG_HPP
