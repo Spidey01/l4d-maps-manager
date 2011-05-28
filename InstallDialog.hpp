@@ -3,6 +3,9 @@
 
 #include <QDialog>
 
+class QDialogButtonBox;
+class QFormLayout;
+
 class InstallDialog : public QDialog
 {
     Q_OBJECT
@@ -12,6 +15,10 @@ public:
 signals:
 
 public slots:
+
+private:
+    QDialogButtonBox *buttons;
+    QFormLayout *mLayout;
 
 };
 

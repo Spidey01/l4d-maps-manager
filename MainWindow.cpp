@@ -20,7 +20,7 @@ MainWindow::~MainWindow()
 bool
 MainWindow::startInstallDialog()
 {
-    InstallDialog *d = new InstallDialog(this);
+    InstallDialog *d = new InstallDialog();
 
     // Just to be a bastard ^_^
     switch(d->exec()) {
