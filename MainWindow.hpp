@@ -15,6 +15,8 @@ public:
 
 private:
     QPushButton *installButton;
+private slots:
+    bool startInstallDialog();
 };
 
 #endif // MAINWINDOW_HPP

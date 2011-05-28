@@ -1,15 +1,33 @@
 #include "MainWindow.hpp"
+#include "InstallDialog.hpp"
 
-#include <QtGui/QPushButton>
+#include <QDebug>
+#include <QPushButton>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     installButton = new QPushButton(tr("Install New Map"));
+    connect(installButton, SIGNAL(clicked()), SLOT(startInstallDialog()));
     setCentralWidget(installButton);
 }
 
 MainWindow::~MainWindow()
 {
 
+}
+
+bool
+MainWindow::startInstallDialog()
+{
+    InstallDialog *d = new InstallDialog(this);
+
+    // Just to be a bastard ^_^
+    switch(d->exec()) {
+    case InstallDialog::Accepted:
+        return true;
+    case InstallDialog::Rejected:
+    default:
+        return false;
+    }
 }
